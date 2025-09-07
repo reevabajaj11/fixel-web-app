@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixel - Explore Feature Gaps</title>
+    <meta name="description" content="Your one stop space to explore gaps in your favorite apps">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="design2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="top-nav">
+        <h1 class="brand-title">Fixel</h1>
+        
+        <nav class="main-nav">
+            <a href="#explore-section">Explore</a>
+            <a href="#">How it Works</a>         
+        </nav>
+        
+        <div class="nav-controls">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <a href="#" class="signup-button">Sign up</a>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <main class="hero-section">
+        <div class="hero-text">
+            <div class="question">
+                <h1>Feature gaps making you scream?</h1>
+            </div>
+            <div class="answer">
+                <p>Welcome Home.<br>
+                Your one stop space to explore gaps in your favorite apps.</p> 
+            </div>
+            <div class="hero-buttons">
+                <a href="#explore-section" class="btn btn-primary">Start Exploring</a>
+                <a href="#" class="btn btn-secondary">Submit an Idea</a>
+            </div>
+        </div>
+    </main>
+    <div id="explore-section" class="explore-section">
+        <div class="nav-bar">
+            <div class="search">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input class="search-input" type="text" placeholder="Search for bugs, fixes or apps...">
+            </div>
+            <div class="filter-dropdown">
+                <button class="filter-button" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-filter filter-icon"></i>
+                    Filters
+                    <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                </button>
+                
+                <div class="dropdown-content" id="filterDropdown">
+                    <div class="dropdown-section">
+                        <h4>Categories</h4>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="category" value="categories">
+                            <span class="checkmark"></span>
+                            Social Media
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="category" value="entertainment">
+                            <span class="checkmark"></span>
+                            Entertainment
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="category" value="productivity">
+                            <span class="checkmark"></span>
+                            Productivity
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="category" value="games">
+                            <span class="checkmark"></span>
+                            Games
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="category" value="others">
+                            <span class="checkmark"></span>
+                            Others
+                        </label>
+                    </div>
+                                        
+                    <div class="dropdown-section">
+                        <h4>Status</h4>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="status" value="open">
+                            <span class="checkmark"></span>
+                            Open
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="status" value="in-progress">
+                            <span class="checkmark"></span>
+                            In Progress
+                        </label>
+                        <label class="dropdown-item">
+                            <input type="checkbox" name="status" value="solved">
+                            <span class="checkmark"></span>
+                            Solved
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="trending">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                Trending
+            </div>
+        </div>
+        <div class="fix-category">
+            Categories
+            <div class="list-category">
+                <div class="bug fix-box">
+                    <div class="bug fix-icon">
+                        <i class="fa-solid fa-bug"></i>
+                    </div>
+                    <p style="font-weight: 500;">Bugs</p>
+                    <div class="bug num">
+                        52
+                    </div>
+                </div>
+                <div class="performance fix-box">
+                    <div class="performance fix-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <p style="font-weight: 500;">Performance</p>
+                    <div class="bug num">
+                        89
+                    </div>
+                </div>
+                <div class="featurer fix-box">
+                    <div class="featurer fix-icon">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    <p style="font-weight: 500;">Feature Requests</p>
+                    <div class="bug num">
+                        210
+                    </div>
+                </div>
+                <div class="ui fix-box">
+                    <div class="ui fix-icon">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <p style="font-weight: 500;">UI/UX</p>
+                    <div class="bug num">
+                        101
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('filterDropdown');
+            const arrow = document.querySelector('.dropdown-arrow');
+            
+            dropdown.classList.toggle('show');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.filter-button') && !event.target.closest('.filter-button')) {
+                const dropdown = document.getElementById('filterDropdown');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                    arrow.classList.remove('rotated');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
