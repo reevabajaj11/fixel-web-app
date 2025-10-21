@@ -1,0 +1,152 @@
+/* Basic Reset and Font Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /**/
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa; /* A very light grey background for the page */
+}
+
+/* Header Styling (from previous version, it's good) */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 8%; /**/
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);/**/
+}
+
+.brand-title {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; /**/
+}
+
+.search-icon {
+    font-size: 1.1rem;
+    color: #888;
+}
+
+.signup-button {
+    display: inline-block; /**/
+    padding: 8px 18px; /**/
+    background-color: #366ce8;
+    color: white;
+    text-decoration: none; /**/
+    font-size: 0.9rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease; 
+}
+
+.signup-button:hover {
+    background-color: #2a58d6;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #eee; /**/
+    margin-bottom: 130px; /* Space below the header */
+}
+
+/* Logo Section Styling - Replicating your desired layout from Image 2 */
+.logo-section-container {
+    display: flex; /* Use flexbox to arrange the column groups and central gap */
+    justify-content: center; /* Center the entire set of logo groups */
+    align-items: flex-start; /* Align items to the top */ /**/
+    gap: 40px; /* Space between the two main column groups and the central gap */
+    margin: 40px auto; /* Center the whole section horizontally */ /**/
+    max-width: 1000px; /* Max width for the entire section */ /**/
+}
+
+.logo-column-group {
+    display: flex;
+    flex-direction: column; /* Stack pairs of logos vertically */
+    gap: 20px; /* Space between the rows of logo pairs */
+}
+
+.logo-pair-row {
+    display: flex;
+    gap: 20px; /* Space between individual logo cards in a row */
+}
+
+.logo-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Fixed width for each card */
+    height: 120px; /* Fixed height for each card */
+    border-radius: 25px; /* More rounded corners for the app-icon look */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for a floating effect */ /**/
+    background-color: #ffffff; /* Default background for the card */ /**/
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /**/
+
+    /* These 3 lines are CRUCIAL for background images to display correctly */
+    background-size: 60%; /* Scale the logo within the card */ /**/
+    background-position: center; /* Center the logo */ /**/
+    background-repeat: no-repeat; /* Don't tile the logo */ /**/
+}
+
+.logo-card:hover {
+    transform: translateY(-8px); /* Lifts the card more on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */ /**/
+}
+
+.central-gap {
+    width: 100px; /* Adjust this width to control the central gap size */
+    height: 100%; /* Take full height of the parent */
+    /* This div is intentionally left empty to create the space */
+    /* border: 1px dashed blue; /* For debugging purposes, remove later */
+}
+
+.whatsapp{
+    background-image: url(images/whats-app.svg);
+}
+
+.twitter{
+    background-image: url(images/twitter.svg);
+}
+
+
+/* Individual Logo Background Colors and Images */
+/* These set the specific image AND the background color for each card */
+
+.threads {
+    background-image: url('images/threads.svg');
+    /* Note: Threads logo is often just black/white, if you want a background color around it, set it here. */
+}
+.tiktok {
+    background-image: url('images/tik-tok.svg');
+    background-size: 80%;
+}
+.meta {
+    background-image: url('images/meta.svg');
+}
+.instagram {
+    background-image: url('images/instagram.svg');
+    background-size: 80%; /* Instagram logo can be slightly larger */
+}
+.spotify {
+    background-image: url('images/Spotify_icon.svg');
+    /* background-color: #1DB954; Spotify's green */
+}
+.netflix {
+    background-image: url('images/netflix.svg');
+    /* background-color: black; Netflix's red */
+}
+.googlemaps {
+    background-image: url('images/google-maps.svg');
+}
+.youtube {
+    background-image: url('images/you-tube.svg');
+}
