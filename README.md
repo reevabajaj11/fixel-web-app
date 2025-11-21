@@ -114,7 +114,7 @@ Then open: [http://localhost:8000](http://localhost:8000)
 
 # 🛡️ Firestore Security Rules
 
-*(For development only — do NOT use in production!)*
+*(For development only, do NOT use in production!)*
 
 ```
 rules_version = '2';
