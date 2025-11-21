@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - Fixel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-nav">
+        <h1 class="brand-title">
+            <a href="index.html" style="text-decoration: none; color: inherit;">Fixel</a>
+        </h1>
+        
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#explore-section">Explore</a>
+            <a href="how-it-works.html">How it Works</a>         
+        </nav>
+        
+        <div class="nav-controls">
+            <a href="login.html#signup" class="signup-button" id="nav-auth-button">Sign Up</a>
+            
+            <div class="profile-menu" id="nav-profile-menu">
+                
+                <div class="profile-icon" id="nav-profile-icon">
+                    </div>
+
+                <div class="profile-dropdown-content" id="nav-profile-dropdown">
+                    <div class="profile-dropdown-header">
+                        Currently in
+                        <div class="profile-user-info">
+                            <div class="profile-icon-small">
+                                </div>
+                            <div>
+                                <span class="profile-dropdown-name">Personal</span>
+                                <span class="profile-dropdown-email" id="nav-profile-email">email@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="profile-dropdown-link" id="nav-logout-button">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="divider"></div>
+
+    <div class="auth-page-container">
+        
+        <div class="auth-container" id="auth-container">
+            
+            <div class="auth-form-container" id="login-form-container">
+                <form id="login-form">
+                    <h2 class="auth-header">Welcome Back!</h2>
+                    
+                    <div class="auth-input-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    
+                    <div class="auth-input-group">
+                        <label for="login-password">Password</label>
+                        <div class="auth-password-wrapper">
+                            <input type="password" id="login-password" required>
+                            <i class="fa-solid fa-eye-slash auth-password-toggle" id="toggle-login-password"></i>
+                        </div>
+                    </div>
+
+                    <a href="#" class="auth-forgot-link" id="forgot-password-link">Forgot Password?</a>
+                    
+                    <button type="submit" class="auth-btn auth-btn-primary" id="login-button">Login</button>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <button type="button" class="auth-btn auth-btn-google" id="google-signin-btn">
+                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+                        Continue with Google
+                    </button>
+
+                    <p class="auth-error-message" id="login-error"></p>
+
+                    <p class="auth-toggle-link">
+                        Don't have an account? 
+                        <a href="#" id="show-signup-link">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+
+            <div class="auth-form-container" id="signup-form-container" style="display: none;">
+                <form id="signup-form">
+                    <h2 class="auth-header">Create Your Account</h2>
+                    
+                    <div class="auth-input-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    
+                    <div class="auth-input-group">
+                        <label for="signup-password">Password</label>
+                        <div class="auth-password-wrapper">
+                            <input type="password" id="signup-password" minlength="6" required placeholder="Create a Password">
+                            <i class="fa-solid fa-eye-slash auth-password-toggle" id="toggle-signup-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <div class="auth-password-wrapper"> 
+                            <input type="password" id="signup-confirm-password" minlength="6" required placeholder="Confirm Password">
+                            <i class="fa-solid fa-eye-slash auth-password-toggle" id="toggle-signup-confirm-password"></i>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="auth-btn auth-btn-primary" id="signup-button">Create Account</button>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <button type="button" class="auth-btn auth-btn-google" id="google-signup-btn">
+                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+                        Sign up with Google
+                    </button>
+
+                    <p class="auth-error-message" id="signup-error"></p>
+                    
+                    <p class="auth-toggle-link">
+                        Already have an account? 
+                        <a href="#" id="show-login-link">Login</a>
+                    </p>
+                </form>
+            </div>
+
+            <div class="auth-form-container" id="verification-pending-container" style="display: none;">
+                <div class="verification-pending-content">
+                    <h2 class="auth-header">Check Your Email</h2>
+                    <p class="verification-text">
+                        We've sent a verification link to 
+                        <strong id="verification-email"></strong>.
+                        Please check your inbox and spam folder.
+                    </p>
+                    <p class="verification-text-small">
+                        Click the link in the email to complete your signup.
+                    </p>
+                    
+                    <button type="button" class="auth-btn auth-btn-primary" id="resend-verification-btn" disabled>
+                        Resend Email (1:00)
+                    </button>
+
+                    <p class="auth-toggle-link">
+                        <a href="#" id="back-to-login-link">Back to Login</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script type="module" src="app.js"></script>
+    <script type="module" src="auth.js"></script>
+</body>
+</html>

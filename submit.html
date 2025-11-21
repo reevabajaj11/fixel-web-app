@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixel - Submit an Idea</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+    <header class="top-nav">
+        <h1 class="brand-title">Fixel</h1>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#explore-section">Explore</a>
+            <a href="how-it-works.html">How it Works</a>
+        </nav>
+        <div class="nav-controls">
+            <a href="login.html#signup" class="signup-button" id="nav-auth-button">Sign Up</a>
+            <div class="profile-menu" id="nav-profile-menu">
+                <div class="profile-icon" id="nav-profile-icon"></div>
+                <div class="profile-dropdown-content" id="nav-profile-dropdown">
+                    <div class="profile-dropdown-header">
+                        Currently in
+                        <div class="profile-user-info">
+                            <div class="profile-icon-small"></div>
+                            <div>
+                                <span class="profile-dropdown-name">Personal</span>
+                                <span class="profile-dropdown-email" id="nav-profile-email">email@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="profile-dropdown-link" id="nav-logout-button">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+
+    <main>
+        <div class="form-container">
+            <h1>Submit an Idea</h1>
+
+            <div id="login-prompt-message" style="display: none;">
+                <p>Please <a href="login.html">log in or sign up</a> to submit an idea.</p>
+            </div>
+
+            <form id="submit-idea-form">
+                <fieldset id="submit-fieldset">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" placeholder="e.g., Watched Reels History" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" rows="4" placeholder="Explain the bug or feature request..." required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appName">App Name</label>
+                            <input type="text" id="appName" placeholder="e.g., Instagram" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appCategory">App Category</label>
+                            <select id="appCategory">
+                                <option>Social Media</option>
+                                <option>Entertainment</option>
+                                <option>Productivity</option>
+                                <option>Games</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reportType">Report Type</label>
+                        <select id="reportType">
+                            <option>Feature Request</option>
+                            <option>Bug</option>
+                            <option>Performance</option>
+                            <option>UI/UX</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Submit Idea</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer class="mini-footer">
+        <p>Fixel is an independent community platform and is not affiliated with any applications listed here.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="submit.js"></script>
+
+</body>
+</html>

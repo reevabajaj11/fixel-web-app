@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixel - Report Details</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- 1. RE-USE YOUR HEADER -->
+    <header class="top-nav">
+        <h1 class="brand-title">
+            <a href="index.html" style="text-decoration: none; color: inherit;">Fixel</a>
+        </h1>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#explore-section">Explore</a>
+            <a href="how-it-works.html">How it Works</a>
+        </nav>
+        <div class="nav-controls">
+            <a href="login.html#signup" class="signup-button" id="nav-auth-button">Sign Up</a>
+            <div class="profile-menu" id="nav-profile-menu">
+                <div class="profile-icon" id="nav-profile-icon"></div>
+                <div class="profile-dropdown-content" id="nav-profile-dropdown">
+                    <div class="profile-dropdown-header">
+                        Currently in
+                        <div class="profile-user-info">
+                            <div class="profile-icon-small"></div>
+                            <div>
+                                <span class="profile-dropdown-name">Personal</span>
+                                <span class="profile-dropdown-email" id="nav-profile-email">email@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="profile-dropdown-link" id="nav-logout-button">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+
+    <main class="report-detail-page">
+        <!-- handled by report.js -->
+        <div id="report-detail-container">
+            <p style="text-align: center; padding: 40px;">Loading report...</p>
+        </div>
+
+        <div class="comments-section">
+            <h2>Comments</h2>
+
+            <!-- comments (handled by report.js) -->
+            <div id="comments-list">
+            </div>
+
+            <div class="comment-form-container">
+                <form id="comment-form" style="display: none;">
+                    <fieldset id="comment-fieldset">
+                        <div class="comment-form-layout">
+                            <div class="comment-form-icon" id="comment-user-icon">?</div>
+                            <div class="form-group">
+                                <textarea id="comment-text" rows="1" placeholder="Write your comment..." required></textarea>
+                                <button type="submit" class="comment-submit-icon-btn" id="comment-submit-icon-btn" disabled>
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="login-prompt-comment" style="display: none;">
+                    <p>Please <a href="login.html">log in or sign up</a> to leave a comment.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="report.js"></script>
+</body>
+</html>

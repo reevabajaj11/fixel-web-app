@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixel - How It Works</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-nav">
+        <h1 class="brand-title">Fixel</h1>
+        
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#explore-section">Explore</a>
+            <a href="how-it-works.html">How it Works</a> </nav>
+        
+        <div class="nav-controls">
+            <a href="login.html#signup" class="signup-button" id="nav-auth-button">Sign Up</a>
+            
+            <div class="profile-menu" id="nav-profile-menu">
+                
+                <div class="profile-icon" id="nav-profile-icon">
+                    </div>
+
+                <div class="profile-dropdown-content" id="nav-profile-dropdown">
+                    <div class="profile-dropdown-header">
+                        Currently in
+                        <div class="profile-user-info">
+                            <div class="profile-icon-small">
+                                </div>
+                            <div>
+                                <span class="profile-dropdown-name">Personal</span>
+                                <span class="profile-dropdown-email" id="nav-profile-email">email@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="profile-dropdown-link" id="nav-logout-button">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <main class="how-it-works-page">
+        
+        <section class="how-it-works-section">
+            <h2>How Fixel Works: Submitting an Idea</h2>
+            <div class="timeline-container">
+                
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <h3>Find a Gap</h3>
+                    <p>Notice a bug, UI flaw, or a missing feature in an app you use every day.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <h3>Post Your Feedback</h3>
+                    <p>Create a detailed post on Fixel, tagging the app and the issue type.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <h3>Watch It Rise</h3>
+                    <p>Other users upvote your idea, giving it visibility and validating the need for a fix.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="how-it-works-section">
+            <h2>How Fixel Works: Exploring Gaps</h2>
+            <div class="timeline-container">
+                
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <h3>Filter & Search</h3>
+                    <p>Use the search and filter tools to find specific issues for any app or category.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <h3>See What's Trending</h3>
+                    <p>Instantly see the most upvoted and talked-about issues in the community.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <h3>Prioritize Your Fixes</h3>
+                    <p>Developers can use this real-world data to fix the right problems and build the right features.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="mini-footer">
+        <p>Fixel is an independent community platform and is not affiliated with any applications listed here.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module">
+      // 1. Create the "lookout"
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // 2. It's on screen! Add a staggered delay
+            entry.target.style.transitionDelay = `${index * 300}ms`; 
+            
+            // 3. Add the 'is-visible' class to trigger the CSS animation
+            entry.target.classList.add('is-visible');
+            
+            // 4. Stop watching this element
+            observer.unobserve(entry.target);
+          }
+        });
+        },
+        {
+          threshold: 0.1 // Trigger when 10% of the item is visible
+        });
+
+        // 5. Find all the timeline steps and tell the lookout to watch them
+        const steps = document.querySelectorAll('.timeline-step');
+        steps.forEach(step => {
+            observer.observe(step);
+        });
+        </script>
+
+    </body>
+</html>
