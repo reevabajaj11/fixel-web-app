@@ -3,16 +3,6 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswor
 // importing auth connection from app.js
 import { auth } from './app.js';
 
-// firebase configuration 
-const firebaseConfig = {
-  apiKey: "AIzaSyAG06yCw10c6zwjKpCaLQduR08LjmGAQQA",
-  authDomain: "fixel-web-app.firebaseapp.com",
-  projectId: "fixel-web-app",
-  storageBucket: "fixel-web-app.firebasestorage.app",
-  messagingSenderId: "911197648138",
-  appId: "1:911197648138:web:b8ec697473a698955bf6f3"
-};
-
 // getting auth
 const googleProvider = new GoogleAuthProvider();  
 console.log("auth.js connected and using shared 'auth' instance.");
