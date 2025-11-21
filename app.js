@@ -3,24 +3,17 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// firebase configuration 
-const firebaseConfig = {
-  apiKey: "AIzaSyAG06yCw10c6zwjKpCaLQduR08LjmGAQQA",
-  authDomain: "fixel-web-app.firebaseapp.com",
-  projectId: "fixel-web-app",
-  storageBucket: "fixel-web-app.firebasestorage.app",
-  messagingSenderId: "911197648138",
-  appId: "1:911197648138:web:b8ec697473a698955bf6f3"
-};
+import { firebaseConfig } from './config.js';
 
-// intilializing and rxporting firebase
-// We initialize here and export the services for other script files to use
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Export services
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 console.log("Firebase Connected!");
 
-// global header 
+// dom elemnents
 document.addEventListener('DOMContentLoaded', () => {  
     
     const navAuthButton = document.getElementById('nav-auth-button');
@@ -31,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownEmail = document.getElementById('nav-profile-email');
     const logoutButton = document.getElementById('nav-logout-button');
 
+    // Only run this if the navbar elements actually exist on this page
     if (!navAuthButton || !profileMenu || !profileIcon) {  
         return;
     }
@@ -66,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // listners for dropdown
+    // listeners for dropdown
     profileIcon.addEventListener('click', (e) => {
         e.stopPropagation();
         dropdown.classList.toggle('show');
